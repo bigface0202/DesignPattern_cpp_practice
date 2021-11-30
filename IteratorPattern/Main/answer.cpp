@@ -23,7 +23,7 @@ public:
 // 集合体
 class Aggregate {
 public:
-  virtual std::unique_ptr<Iterator> GetIterator() = 0;
+  virtual std::unique_ptr<Iterator> iterator() = 0;
   virtual ~Aggregate() {}
 };
 
@@ -33,9 +33,9 @@ private:
   std::string name;
 
 public:
-  /* コンストラクタ */
-  Book (std::string name)
-  : name(name) {}
+  void setName(const std::string name) {
+    this->name = name;
+  }
   /* 本の名前を返す */
   std::string getBookName () {
     return this->name;
@@ -67,7 +67,7 @@ public:
     return last;
   }
   /* イテレータ */
-  std::unique_ptr<Iterator> GetIterator() override;
+  std::unique_ptr<Iterator> iterator() override;
 };
 
 // 本棚のイテレータ
@@ -99,11 +99,33 @@ public:
 
 };
 
-std::unique_ptr<Iterator> BookShelf::GetIterator() {
+// GetIteratorを定義
+std::unique_ptr<Iterator> BookShelf::iterator() {
   return std::unique_ptr<BookShelfIterator>(new BookShelfIterator(*this));
 }
 
 int main( int argc, char *argv[] )
 {
-    
+  BookShelf bookShelf(4);
+  Book book1;
+  Book book2;
+  Book book3;
+  Book book4;
+
+  book1.setName("Around the World in 80 Days");
+  book2.setName("Bible");
+  book3.setName("Cinderella");
+  book4.setName("Daddy-Long-Legs");
+
+  bookShelf.appendBook(book1);
+  bookShelf.appendBook(book2);
+  bookShelf.appendBook(book3);
+  bookShelf.appendBook(book4);
+  auto it = bookShelf.iterator();
+
+  while(it->hasNext()) {
+    Book *book = reinterpret_cast<Book*>(it->next());
+    std::cout << book->getBookName() << std::endl;
+  }
+
 }
