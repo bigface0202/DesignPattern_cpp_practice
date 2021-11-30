@@ -124,6 +124,7 @@ int main( int argc, char *argv[] )
   auto it = bookShelf.iterator();
 
   while(it->hasNext()) {
+    // ポインタのキャストになる
     Book *book = reinterpret_cast<Book*>(it->next());
     std::cout << book->getBookName() << std::endl;
   }
