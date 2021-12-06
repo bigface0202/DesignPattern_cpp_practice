@@ -8,6 +8,10 @@
 #include <iostream>
 #include <string>
 
+/** 
+ * 文字列を加工して表示するBannerクラス
+ * 既に提供されているAPIと仮定
+*/
 class Banner {
 public:
   Banner(std::string string)
@@ -27,7 +31,11 @@ private:
   std::string string;
 };
 
-// 本来はここにインターフェースも継承する
+/** アダプター 
+ * Bannerクラスに変更があった場合、出力をよしなに調整する
+ * Javaではここにインターフェース（Print）も継承する
+ * C++では複数の継承は推奨されていない
+*/
 class PrintBanner : public Banner {
 public:
   // ここでBannerを初期化する
