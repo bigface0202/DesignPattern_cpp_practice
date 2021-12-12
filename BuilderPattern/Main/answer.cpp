@@ -49,6 +49,10 @@ private:
   Builder* builder;
 };
 
+/** 
+ * TextBuilderクラス
+ * Builderを継承して、抽象メソッドの肉付けを行っている
+*/
 class TextBuilder : public Builder 
 {
 public:
@@ -82,6 +86,10 @@ private:
   std::stringstream buffer;
 };
 
+/** 
+ * HTMLBuilderクラス
+ * Builderを継承して、抽象メソッドの肉付けを行っている
+*/
 class HTMLBuilder : public Builder
 {
 public:
