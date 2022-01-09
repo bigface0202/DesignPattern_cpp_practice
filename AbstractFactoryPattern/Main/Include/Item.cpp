@@ -9,6 +9,4 @@
 using namespace factory;
 
 Item::Item(std::string caption)
-{
-  this->caption = caption;
-}
+:caption(caption) {}

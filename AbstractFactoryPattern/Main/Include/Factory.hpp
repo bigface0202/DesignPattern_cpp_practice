@@ -21,9 +21,9 @@ public:
   Factory(Factory* factory);
 
 public:
-  virtual Link* createLink(std::string caption, std::string url);
-  virtual Tray* createTray(std::string caption);
-  virtual Page* createPage(std::string title, std::string author);
+  virtual Link* createLink(std::string caption, std::string url) = 0;
+  virtual Tray* createTray(std::string caption) = 0;
+  virtual Page* createPage(std::string title, std::string author) = 0;
 
 private:
   Factory* factory;

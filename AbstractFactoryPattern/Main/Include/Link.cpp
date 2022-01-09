@@ -10,7 +10,4 @@ using namespace factory;
 
 // 基本クラスのコンストラクタに引数を渡す場合は、初期化のような形で渡す
 Link::Link(std::string caption, std::string url)
-: Item(caption)
-{
-  this->url = url;
-}
+: Item(caption), url(url) {}

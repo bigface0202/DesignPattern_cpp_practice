@@ -8,7 +8,7 @@
 
 #include "Main/Include/Factory.hpp"
 
-using namespace facotory;
+using namespace factory;
 
 Factory::Factory(Factory* factory)
-:facotry(factory) {}
+:factory(factory) {}

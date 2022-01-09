@@ -3,7 +3,7 @@
  * 
  * ページクラス
  * HTMLページ全体を抽象的に表現したクラス
- * Factoryの中ではこれが製品となる
+ * Factoryの中ではこれが抽象的な製品となる
  * @author bigface / created on 2021/12/15
  */
 #ifndef PAGE_H
@@ -25,7 +25,7 @@ public:
 
   void output();
 
-  virtual std::string makeHTML();
+  virtual std::string makeHTML() = 0;
 
 private:
   std::string title;

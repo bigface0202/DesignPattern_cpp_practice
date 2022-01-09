@@ -15,10 +15,7 @@
 using namespace factory;
 
 Page::Page(std::string title, std::string author)
-{
-  this->title = title;
-  this->author = author;
-}
+:title(title), author(author) {}
 
 void Page::add(Item* item)
 {
