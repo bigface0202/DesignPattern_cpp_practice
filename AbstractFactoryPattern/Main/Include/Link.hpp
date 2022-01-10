@@ -23,7 +23,8 @@ public:
 
   ~Link();
 
-private:
+// protectedにしておくことで、派生クラスにおいてもアクセスできるようになる。
+protected:
   std::string url;
 };
 

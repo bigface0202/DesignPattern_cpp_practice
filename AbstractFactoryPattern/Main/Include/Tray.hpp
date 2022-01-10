@@ -25,7 +25,8 @@ public:
 
   void add(Item* item);
 
-private:
+// protectedにしておくことで、派生クラスにおいてもアクセスできるようになる。
+protected:
   std::vector<Item*> tray;
 };
 }

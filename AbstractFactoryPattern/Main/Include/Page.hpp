@@ -27,7 +27,8 @@ public:
 
   virtual std::string makeHTML() = 0;
 
-private:
+// protectedにしておくことで、派生クラスにおいてもアクセスできるようになる。
+protected:
   std::string title;
   std::string author;
   std::vector<Item*> content;
