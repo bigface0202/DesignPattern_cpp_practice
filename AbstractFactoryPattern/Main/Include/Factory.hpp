@@ -18,15 +18,12 @@
 namespace factory {
 class Factory {
 public:
-  Factory(Factory* factory);
+  Factory();
+  virtual ~Factory();
 
-public:
   virtual Link* createLink(std::string caption, std::string url) = 0;
   virtual Tray* createTray(std::string caption) = 0;
   virtual Page* createPage(std::string title, std::string author) = 0;
-
-private:
-  Factory* factory;
 };
 
 }

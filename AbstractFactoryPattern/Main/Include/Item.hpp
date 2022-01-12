@@ -19,8 +19,6 @@ class Item {
 public:
   Item(std::string caption);
 
-  ~Item();
-
   virtual std::string makeHTML() = 0;
 
 // protectedにしておくことで、派生クラスにおいてもアクセスできるようになる。

@@ -12,7 +12,9 @@ gwrt_binary(
     name = BIN_NAME,
     srcs = [ "answer.cpp", ],
     copts = ["-std=c++2a", "-lstdc++fs"], # C++17を使う
-    deps = [],
+    deps = [
+      "//Main/Include:Include"
+    ],
 )
 
 # ans_deploy( 
