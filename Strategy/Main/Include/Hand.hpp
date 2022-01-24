@@ -17,11 +17,11 @@ public:
   static const int HANDVALUE_GUU = 0;
   static const int HANDVALUE_CHO = 1;
   static const int HANDVALUE_PAA = 2;
-  static const Hand hand[3];
+  static Hand* hand[3];
 
-  static Hand getHand(int handvalue);
-  bool isStrongerThan(Hand h);
-  bool isWeakerThan(Hand h);
+  static Hand* getHand(int handvalue);
+  bool isStrongerThan(Hand* h);
+  bool isWeakerThan(Hand* h);
   std::string toString();
 
 private:
@@ -29,7 +29,7 @@ private:
   int handvalue;
 
   Hand(int handvalue);
-  int fight(Hand h);
+  int fight(Hand* h);
 };
 
 #endif

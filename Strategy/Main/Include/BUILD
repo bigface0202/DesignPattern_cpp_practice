@@ -10,10 +10,18 @@ load( "@gwrt//Main:gwrt.bzl", "gwrt_library" )
 gwrt_library(
     name = "Include",
     hdrs = [
-      "Hand.hpp"
+      "Hand.hpp",
+      "Player.hpp",
+      "Strategy.hpp",
+      "ProbStrategy.hpp",
+      "WinningStrategy.hpp"
     ],
     srcs = [
-      "Hand.cpp"
+      "Hand.cpp",
+      "Player.cpp",
+      "Strategy.cpp",
+      "ProbStrategy.cpp",
+      "WinningStrategy.cpp"
     ],
     copts = [],
     deps = [],
