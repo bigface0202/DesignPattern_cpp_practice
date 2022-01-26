@@ -23,11 +23,11 @@ int main( int argc, char *argv[] )
     Hand* nextHand2 = player2->nextHand();
 
     if (nextHand1->isStrongerThan(nextHand2)) {
-      std::cout << "Winner:" << player1 << std::endl;
+      std::cout << "Winner:" << player1->name << std::endl;
       player1->win();
       player2->lose();
     } else if (nextHand2->isStrongerThan(nextHand1)) {
-      std::cout << "Winner:" << player2 << std::endl;
+      std::cout << "Winner:" << player2->name << std::endl;
       player1->lose();
       player2->win();
     } else {

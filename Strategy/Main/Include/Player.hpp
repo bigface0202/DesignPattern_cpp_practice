@@ -21,10 +21,10 @@ public:
   void win();
   void lose();
   void even();
-  std::string toString();  
+  std::string toString();
+  std::string name;
 
 private:
-  std::string name;
   Strategy* strategy;
   int wincount;
   int losecount;

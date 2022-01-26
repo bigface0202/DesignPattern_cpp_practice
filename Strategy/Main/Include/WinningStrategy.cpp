@@ -11,7 +11,7 @@ Hand* WinningStrategy::nextHand()
 {
   std::random_device seed;
   std::default_random_engine random(seed());
-  std::uniform_int_distribution<int> dist(0, 3);
+  std::uniform_int_distribution<int> dist(0, 2);
   
   if (!won) {
     this->prevHand = Hand::getHand(dist(random));
