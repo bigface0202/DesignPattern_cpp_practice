@@ -19,10 +19,6 @@ class Border: public Display
 public:
   /** インスタンス生成時に「中身を引数で指定 */
   Border(Display* display);
-
-  int getColumns() const;
-  int getRows() const;
-  std::string getRowText(int row) const;
 protected:
   /** 飾り枠がくるんでいる「中身」を指す */
   Display* display;

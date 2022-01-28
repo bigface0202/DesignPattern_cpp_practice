@@ -10,18 +10,3 @@
 
 Border::Border(Display* display)
 : display(display) {}
-
-int Border::getColumns() const
-{
-  return this->display->getColumns();
-}
-
-int Border::getRows() const 
-{
-  return this->display->getRows();
-}
-
-std::string Border::getRowText(int row) const 
-{
-  return this->display->getRowText(row);
-}
