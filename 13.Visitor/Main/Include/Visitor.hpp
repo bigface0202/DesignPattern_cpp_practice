@@ -17,8 +17,8 @@ class Visitor
 {
 public:
   virtual ~Visitor(){};
-  virtual void visit(File* file);
-  virtual void visit(Directory* directory); // メソッドのoverload
+  virtual void visit(File* file) = 0;
+  virtual void visit(Directory* directory) = 0; // メソッドのoverload
 };
 
 #endif

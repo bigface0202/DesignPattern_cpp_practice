@@ -14,7 +14,7 @@
 class Element 
 {
 public:
-  virtual void accept(Visitor* v);
+  virtual void accept(Visitor* v) = 0;
 };
 
 
