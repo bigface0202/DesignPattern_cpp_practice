@@ -7,18 +7,24 @@
  * @author bigface / created on 2022/01/29
  */
 
-#ifndef VISITOR_H
-#define VISITOR_H
+#ifndef VVISITOR_H
+#define VVISITOR_H
 
-#include "Main/Include/File.hpp"
-#include "Main/Include/Directory.hpp"
+// 循環参照となる場合は、ヘッダーではクラス名だけ宣言しておく。
+class File;
+class Directory;
 
 class Visitor
 {
 public:
-  virtual ~Visitor(){};
+  /** デストラクタ */
+  virtual ~Visitor() {}
+
+  /** Fileを訪問する */
   virtual void visit(File* file) = 0;
-  virtual void visit(Directory* directory) = 0; // メソッドのoverload
+
+  /** Directoryを訪問する */
+  virtual void visit(Directory* directory) = 0;
 };
 
 #endif

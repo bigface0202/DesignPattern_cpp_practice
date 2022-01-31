@@ -2,7 +2,7 @@
  * @file Directory.cpp
  * 
  * Directoryクラスのソースファイル
- * @author bigface / created on 2022/01/26
+ * @author bigface / created on 2022/01/31
  */
 
 #include "Main/Include/Directory.hpp"
@@ -27,6 +27,7 @@ int Directory::getSize()
 Entry* Directory::add(Entry* entry)
 {
   this->directory.push_back(entry);
+
   return this;
 }
 

@@ -6,8 +6,8 @@
  * @author bigface / created on 2022/01/26
  */
 
-#ifndef EXCEPTION_H
-#define EXCEPTION_H
+#ifndef VEXCEPTION_H
+#define VEXCEPTION_H
 
 #include <string>
 

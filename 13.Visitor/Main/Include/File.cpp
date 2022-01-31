@@ -2,10 +2,12 @@
  * @file File.cpp
  * 
  * Fileクラスのソースファイル
- * @author bigface / created on 2022/01/26
+ * @author bigface / created on 2022/01/31
  */
 
 #include "Main/Include/File.hpp"
+// ソースファイルではVisitorのヘッダーファイルをインクルードする。
+#include "Main/Include/Visitor.hpp"
 
 File::File(std::string name, int size)
 : name(name), size(size) {}

@@ -6,6 +6,8 @@
 */
 
 #include "Main/Include/ListVisitor.hpp"
+#include "Main/Include/File.hpp"
+#include "Main/Include/Directory.hpp"
 
 void ListVisitor::visit(File* file)
 {
@@ -16,6 +18,7 @@ void ListVisitor::visit(Directory* directory)
 {
   std::cout << this->currentDir << "/" << directory->toString() << std::endl;
   std::string savedir = this->currentDir;
+  this->currentDir = this->currentDir + "/" + directory->getName();
   auto dirs = directory->getDirectory();
 
   for (auto entry : dirs) {

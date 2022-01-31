@@ -11,17 +11,16 @@ gwrt_library(
     name = "Include",
     # ここにヘッダーファイル名を挿入
     hdrs = [
-      "Visitor.hpp",
       "Element.hpp",
-      "ListVisitor.hpp",
       "Entry.hpp",
       "File.hpp",
+      "Visitor.hpp",
+      "ListVisitor.hpp",
       "Directory.hpp",
       "FileTreatmentException.hpp",
     ],
     # ここにソースファイル名を挿入
     srcs = [
-      "Element.cpp",
       "ListVisitor.cpp",
       "Entry.cpp",
       "File.cpp",

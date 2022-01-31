@@ -7,31 +7,43 @@
  * @author bigface / created on 2022/01/29
  */
 
-#ifndef FILE_H
-#define FILE_H
+#ifndef VFILE_H
+#define VFILE_H
 
 #include <string>
 #include <iostream>
 #include "Main/Include/Entry.hpp"
-#include "Main/Include/Visitor.hpp"
 
-class File : public Entry
+// 循環参照となる場合は、ヘッダーではクラス名だけ宣言しておく。
+class Visitor;
+
+class File : public Entry 
 {
 public:
+  /** コンストラクタ */
   File(std::string name, int size);
+
+  /** ファイル名を取得 */
   std::string getName();
+
+  /** ファイルサイズを取得 */
   int getSize();
-  // Visitorを継承したサブクラスを受け入れるために、ポインタにする必要がある
-  void accept(Visitor* v);
+
+  /** Entryから継承したacceptの実体 */
+  void accept(Visitor* v); // Visitorを継承したサブクラスを受け入れるために、ポインタにする必要がある
 
 protected:
   /** 一覧を表示する */
   void printList();
+
   /** エントリの一覧 */
-  void printList(std::string prefix) override;
+  void printList(std::string prefix);
 
 private:
+  /** ファイル名 */
   std::string name;
+
+  /** ファイルサイズ */
   int size;
 };
 
