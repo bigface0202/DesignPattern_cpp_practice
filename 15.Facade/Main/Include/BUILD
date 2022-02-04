@@ -10,9 +10,17 @@ load( "@gwrt//Main:gwrt.bzl", "gwrt_library" )
 gwrt_library(
     name = "Include",
     # ここにヘッダーファイル名を挿入
-    hdrs = [],
+    hdrs = [
+      "Database.hpp",
+      "HtmlWriter.hpp",
+      "PageMaker.hpp",
+    ],
     # ここにソースファイル名を挿入
-    srcs = [],
+    srcs = [
+      "Database.cpp",
+      "HtmlWriter.cpp",
+      "PageMaker.cpp",
+    ],
     copts = [],
     deps = [],
 )
