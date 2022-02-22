@@ -10,6 +10,7 @@
 #ifndef STATE_H
 #define STATE_H
 
+// 循環参照は親ファイルで解決しておけば、子ファイルは気にしなくてよい（？）
 class Context;
 
 class State {
@@ -25,6 +26,9 @@ public:
 
   /** 通常通話 */
   virtual void doPhone(Context *context) = 0;
+
+  /** 文字列表現 */
+  virtual std::string toString() = 0;
 };
 
 #endif

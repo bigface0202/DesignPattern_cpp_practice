@@ -11,6 +11,7 @@
 
 #include <string>
 
+// 循環参照は親ファイルで解決しておけば、子ファイルは気にしなくてよい（？）
 class State;
 
 class Context 

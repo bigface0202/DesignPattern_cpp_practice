@@ -1,21 +1,21 @@
 /**
- * @file DayState.hpp
+ * @file NightState.hpp
  * 
- * DayStateクラス
- * 昼の状態を表すStateを継承した具象クラス。
+ * NightStateクラス
+ * 夜の状態を表すStateを継承した具象クラス。
  * @author bigface / created on 2022/02/21
  */
 
-#ifndef DAYSTATE_H
-#define DAYSTATE_H
+#ifndef NIGHTSTATE_H
+#define NIGHTSTATE_H
 
 #include <iostream>
 #include <string>
 #include "Main/Include/State.hpp"
 #include "Main/Include/Context.hpp"
-#include "Main/Include/NightState.hpp"
+#include "Main/Include/DayState.hpp"
 
-class DayState: public State 
+class NightState: public State 
 {
 public:
   /** 唯一のインスタンスを得る */
@@ -37,10 +37,10 @@ public:
   std::string toString();
 
 private:
-  static DayState *_singleton;
+  static NightState *_singleton;
 
   /** コンストラクタ */
-  DayState();
+  NightState();
 };
 
 
