@@ -25,12 +25,13 @@ JPNCharFactory* JPNCharFactory::getInstance()
 
 JPNChar* JPNCharFactory::getJPNChar(char charname)
 {
-  try {
-    JPNChar* jc = pool_.at("" + charname);
-    return jc;
-  } catch (std::out_of_range&) {
-    JPNChar* jc = new JPNChar(charname);
+  JPNChar* jc;
+  if (pool_.find("" + charname) != pool_.end())
+  {
+    jc = pool_.at("" + charname);
+  } else {
+    jc = new JPNChar(charname);
     pool_.emplace("" + charname, jc);
-    return jc;
   }
+  return jc;
 }
